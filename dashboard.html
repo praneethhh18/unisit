@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+
+        header {
+            background-color: #3498db;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        #collegeLogo {
+            max-width: 180px; /* Adjust the max-width as needed */
+        }
+
+        h1 {
+            margin: 9px 0;
+            font-size: 24px;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+
+        section h2 {
+            color: #3498db;
+        }
+
+        section p {
+            color: #555;
+        }
+
+        section a {
+            display: inline-block;
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        section a:hover {
+            background-color: #2980b9;
+        }
+
+        script {
+            background-color: #2ecc71;
+            color: #fff;
+            padding: 10px;
+            display: block;
+            margin-top: 20px;
+        }
+    </style>
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <header>
+        <img src="pk1.jpeg" alt="College Logo" id="collegeLogo"> 
+        <h1>Welcome to the Dashboard, <%=loggedInUser%></h1>
+    </header>
+
+    <main>
+        <section id="announcements">
+            <h2>Important Announcements</h2>
+            <p>No current announcements.</p>
+            <a href="announcements.html">View Announcements</a>
+        </section>
+
+        <section id="alumni">
+            <h2>Alumni Section</h2>
+            <p>Showcase notable alumni and their achievements.</p>
+            <a href="alumni.html">Explore Alumni</a>
+        </section>
+        
+        <section id="contact info">
+            <h2>Contact Information</h2>
+            <p>Contact information regarding the university.</p>
+            <a href="contact.html">View Contacts</a>
+        </section>
+        
+        <section id="slot booking">
+            <h2>Slot Booking</h2>
+            <p>Slot booking information.</p>
+            <a href="slot.html">View Slots</a>
+        </section>
+    </main>
+
+    <script defer src="script.js"></script>
+</body>
+
+</html>

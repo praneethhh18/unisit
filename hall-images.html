@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hall Images</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-top: 30px;
+            font-size: 36px;
+        }
+
+        .hall-images {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 20px;
+        }
+
+        .hall-image {
+            max-width: 300px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Hall Images</h1>
+
+    <!-- Seminar Hall Section -->
+    <section id="seminar-hall">
+        <h2>Seminar Hall</h2>
+        <div class="hall-images" id="seminar-hall-container"></div>
+    </section>
+
+    <!-- Auditorium Section -->
+    <section id="auditorium">
+        <h2>Auditorium</h2>
+        <div class="hall-images" id="auditorium-container"></div>
+    </section>
+
+    <!-- First Stage Section -->
+    <section id="first-stage">
+        <h2>First Stage</h2>
+        <div class="hall-images" id="first-stage-container"></div>
+    </section>
+
+    <!-- Classrooms Section -->
+    <section id="classrooms">
+        <h2>Classrooms</h2>
+        <div class="hall-images" id="classrooms-container"></div>
+    </section>
+
+    <script>
+        // Define image sources for each hall
+        const hallImages = {
+            'seminar-hall': ['seminar-hall-1.jpg', 'seminar-hall-2.jpg', 'seminar-hall-3.jpg', 'seminar-hall-4.jpg', 'seminar-hall-5.jpg', 'seminar-hall-6.jpg', 'seminar-hall-7.jpg', 'seminar-hall-8.jpg', 'seminar-hall-9.jpg', 'seminar-hall-10.jpg'],
+            'auditorium': ['auditorium-1.jpg', 'auditorium-2.jpg', 'auditorium-3.jpg', 'auditorium-4.jpg', 'auditorium-5.jpg', 'auditorium-6.jpg', 'auditorium-7.jpg', 'auditorium-8.jpg', 'auditorium-9.jpg', 'auditorium-10.jpg'],
+            'first-stage': ['first-stage-1.jpg', 'first-stage-2.jpg', 'first-stage-3.jpg', 'first-stage-4.jpg', 'first-stage-5.jpg', 'first-stage-6.jpg', 'first-stage-7.jpg', 'first-stage-8.jpg', 'first-stage-9.jpg', 'first-stage-10.jpg'],
+            'classrooms': ['classroom-1.jpg', 'classroom-2.jpg', 'classroom-3.jpg', 'classroom-4.jpg', 'classroom-5.jpg', 'classroom-6.jpg', 'classroom-7.jpg', 'classroom-8.jpg', 'classroom-9.jpg', 'classroom-10.jpg']
+        };
+
+        // Function to display images for a specific hall
+        function displayHallImages(hallId, containerId) {
+            const container = document.getElementById(containerId);
+
+            // Check if the selected hall is valid
+            if (hallImages[hallId]) {
+                // Dynamically create image elements for the selected hall
+                hallImages[hallId].forEach(imageSrc => {
+                    const imgElement = document.createElement('img');
+                    imgElement.src = imageSrc;
+                    imgElement.alt = `${hallId} Image`;
+                    imgElement.className = 'hall-image';
+                    container.appendChild(imgElement);
+                });
+            } else {
+                // Display a message if the selected hall is not valid
+                const errorMessage = document.createElement('p');
+                errorMessage.textContent = 'Invalid hall selection.';
+                container.appendChild(errorMessage);
+            }
+        }
+
+        // Call the function for each hall
+        displayHallImages('seminar-hall', 'seminar-hall-container');
+        displayHallImages('auditorium', 'auditorium-container');
+        displayHallImages('first-stage', 'first-stage-container');
+        displayHallImages('classrooms', 'classrooms-container');
+    </script>
+</body>
+
+</html>
